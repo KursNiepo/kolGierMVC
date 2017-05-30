@@ -1,0 +1,15 @@
+﻿@model KolekcjaGierMVC1.Models.FakeRepository
+@{
+    ViewBag.Title = "Lista Gier";
+    Layout = "~/Views/Shared/_KolekcjaLayout.cshtml";
+}
+
+<h2>Lista</h2>
+
+<div id="kategorie">
+    <ul>
+    @foreach (var item in Model.Categories) {
+        <li>@Html.ActionLink(item.Name,"ListaGier",new {id=item.CategoryID})  </li>
+    }
+    </ul>
+</div>
